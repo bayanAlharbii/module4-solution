@@ -13,13 +13,19 @@
           method: "GET",
           url: "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items.json"
         }).then(function (result) {
-          var allItems = result.data.menu_items;
-          var filtered = allItems.filter(function (item) {
-            return item.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+            console.log("API Result:", result.data); // ADD THIS LINE
+          
+            var itemsArray = result.data.menu_items || [];
+          
+            var filtered = itemsArray.filter(function (item) {
+              return item.description &&
+                     item.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+            });
+          
+            return filtered;
           });
-          return filtered;
-        });
       };
+      
     }
     
     })();
