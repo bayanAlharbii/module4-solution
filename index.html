@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="NarrowItDownApp">
-<head>
-  <meta charset="UTF-8">
-  <title>Menu Search App</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="app.js"></script>
-  <script src="menuSearchService.js"></script>
-  <script src="foundItems.component.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Menu Search App</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+      
+        <!-- The correct order: app.js comes FIRST because it defines the module -->
+        <script src="app.js"></script>
+        <script src="menuSearchService.js"></script>
+        <script src="foundItems.component.js"></script>
+      </head>
+      
 <body>
   <div ng-controller="NarrowItDownController as ctrl">
     <input type="text" ng-model="ctrl.searchTerm" placeholder="Search term">
